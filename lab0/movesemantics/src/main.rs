@@ -82,13 +82,12 @@ fn fill_vec() -> Vec<i32> {
     assert_eq!(x, 1200);
     println!("{}", x)
 } */
-/* */
-fn main() {
+/*fn main() {
     let data = "Rust is great!".to_string();
 
-    println!("{}", get_char(data));
+    get_char(&data);
 
-    string_uppercase(&data);
+    string_uppercase(data);
 }
 
 // Should not take ownership
@@ -97,8 +96,9 @@ fn get_char(data: &String) -> char {
 }
 
 // Should take ownership
-fn string_uppercase(data: &String) {
+fn string_uppercase(mut data: String) {
     data = data.to_uppercase();
 
     println!("{}", data);
-}
+}*/
+
