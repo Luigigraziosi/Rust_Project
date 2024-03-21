@@ -1,0 +1,10 @@
+C:\Users\luigi\OneDrive\Desktop\GitHub\Rust_Project\lab1\es1\slugify\target\debug\deps\libanstyle_wincon-79fd90ee79e54a46.rmeta: C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\lib.rs C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\ansi.rs C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\stream.rs C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\windows.rs
+
+C:\Users\luigi\OneDrive\Desktop\GitHub\Rust_Project\lab1\es1\slugify\target\debug\deps\libanstyle_wincon-79fd90ee79e54a46.rlib: C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\lib.rs C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\ansi.rs C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\stream.rs C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\windows.rs
+
+C:\Users\luigi\OneDrive\Desktop\GitHub\Rust_Project\lab1\es1\slugify\target\debug\deps\anstyle_wincon-79fd90ee79e54a46.d: C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\lib.rs C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\ansi.rs C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\stream.rs C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\windows.rs
+
+C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\lib.rs:
+C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\ansi.rs:
+C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\stream.rs:
+C:\Users\luigi\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-wincon-3.0.2\src\windows.rs:
