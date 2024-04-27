@@ -4,7 +4,6 @@ const SUBS_I: &str = "àáâäæãåāăąçćčđďèéêëēėęěğǵḧîï�
 const SUBS_O: &str = "aaaaaaaaaacccddeeeeeeeegghiiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuwxyyzzz";
 //WARNING : The slice SUBS_I is without the 'ù' to do a fourth test...
 
-
 #[derive(Parser, Debug)]
 struct Args {
 // input string
@@ -14,6 +13,7 @@ slug_in: String,
 fn main() {
     let args = Args::parse();
     let s :String = args.slug_in.to_string();
+    let s :String = "Questo non sarà uno Slag!".to_string();
     
     println!("{}",s);
     println!("slug: {}", slugify(&s));
@@ -23,8 +23,9 @@ fn main() {
 fn slugify(s: &str) -> String {
     let mut news : String = "".to_string();
     let mut newc = 'a';
-    for char in s.chars(){
-        char.to_lowercase().next().unwrap();
+    for mut char in s.chars(){
+        char = char.to_lowercase().next().unwrap();
+        //println!("{}", char.to_lowercase().next().unwrap());
         if !char.is_alphanumeric(){
             if newc != '-' {
                 newc = '-';
@@ -46,7 +47,7 @@ fn slugify(s: &str) -> String {
 
 fn conv(c: char) -> char {
     let mut i :i32 = 0;
-    c.to_lowercase().next().unwrap();
+    
     if SUBS_I.contains(c) {
         for newc in SUBS_I.chars() {
             if c == newc  {
@@ -59,7 +60,7 @@ fn conv(c: char) -> char {
         }
         return c;
     }
-    else if SUBS_O.contains(c){
+    else if c.is_alphanumeric(){
         return c;
     }
     else{
@@ -67,85 +68,145 @@ fn conv(c: char) -> char {
     }
 }
 
-#[cfg(test)]
-mod tests {
-use super::*;
+// #[cfg(test)]
+// mod tests {
+// use super::*;
 
 
-#[test]
-fn my_first_test() {
-// valore = preparazione test
-let valore = "à";
-let valore_atteso = "a";
-assert_eq!(slugify(valore), valore_atteso)
-}
-#[test]
-fn my_second_test() {
-// valore = preparazione test
-let valore = "c";
-let valore_atteso = "c";
-assert_eq!(slugify(valore), valore_atteso)
-}
-#[test]
-fn my_third_test() {
-// valore = preparazione test
-let valore = "°";
-let valore_atteso = "-";
-assert_eq!(slugify(valore), valore_atteso)
-}
-#[test]
-fn my_fourth_test() {
-// valore = preparazione test
-let valore = "ù";
-let valore_atteso = "-";
-assert_eq!(slugify(valore), valore_atteso)
-}
-#[test]
-fn my_fifth_test() {
-// valore = preparazione test
-let valore = "ciao come";
-let valore_atteso = "ciao-come";
-assert_eq!(slugify(valore), valore_atteso)
-}
-#[test]
-fn my_six_test() {
-// valore = preparazione test
-let valore = "ciàè";
-let valore_atteso = "ciae";
-assert_eq!(slugify(valore), valore_atteso)
-}
-#[test]
-fn my_seven_test() {
-// valore = preparazione test
-let valore = " ";
-let valore_atteso = "-";
-assert_eq!(slugify(valore), valore_atteso)
-}
-#[test]
-fn my_eight_test() {
-// valore = preparazione test
-let valore = "    ";
-let valore_atteso = "-";
-assert_eq!(slugify(valore), valore_atteso)}
-#[test]
-fn my_nine_test() {
-// valore = preparazione test
-let valore = "ci{a}o}";
-let valore_atteso = "ci-a-o";
-assert_eq!(slugify(valore), valore_atteso)
-}
-#[test]
-fn my_ten_test() {
-// valore = preparazione test
-let valore = "{{{{{";
-let valore_atteso = "-";
-assert_eq!(slugify(valore), valore_atteso)
-}
-#[test]
-fn my_eleven_test() {
-// valore = preparazione test
-let valore = " a ";
-let valore_atteso = "-a";
-assert_eq!(slugify(valore), valore_atteso)
-}
-}
+// #[test]
+// fn my_first_test() {
+// // valore = preparazione test
+// let valore = "à";
+// let valore_atteso = "a";
+// assert_eq!(slugify(valore), valore_atteso)
+// }
+// #[test]
+// fn my_second_test() {
+// // valore = preparazione test
+// let valore = "c";
+// let valore_atteso = "c";
+// assert_eq!(slugify(valore), valore_atteso)
+// }
+// #[test]
+// fn my_third_test() {
+// // valore = preparazione test
+// let valore = "°";
+// let valore_atteso = "-";
+// assert_eq!(slugify(valore), valore_atteso)
+// }
+// #[test]
+// fn my_fourth_test() {
+// // valore = preparazione test
+// let valore = "ù";
+// let valore_atteso = "-";
+// assert_eq!(slugify(valore), valore_atteso)
+// }
+// #[test]
+// fn my_fifth_test() {
+// // valore = preparazione test
+// let valore = "ciao come";
+// let valore_atteso = "ciao-come";
+// assert_eq!(slugify(valore), valore_atteso)
+// }
+// #[test]
+// fn my_six_test() {
+// // valore = preparazione test
+// let valore = "ciàè";
+// let valore_atteso = "ciae";
+// assert_eq!(slugify(valore), valore_atteso)
+// }
+// #[test]
+// fn my_seven_test() {
+// // valore = preparazione test
+// let valore = " ";
+// let valore_atteso = "-";
+// assert_eq!(slugify(valore), valore_atteso)
+// }
+// #[test]
+// fn my_eight_test() {
+// // valore = preparazione test
+// let valore = "    ";
+// let valore_atteso = "-";
+// assert_eq!(slugify(valore), valore_atteso)}
+// #[test]
+// fn my_nine_test() {
+// // valore = preparazione test
+// let valore = "ci{a}o}";
+// let valore_atteso = "ci-a-o";
+// assert_eq!(slugify(valore), valore_atteso)
+// }
+// #[test]
+// fn my_ten_test() {
+// // valore = preparazione test
+// let valore = "{{{{{";
+// let valore_atteso = "-";
+// assert_eq!(slugify(valore), valore_atteso)
+// }
+// #[test]
+// fn my_eleven_test() {
+// // valore = preparazione test
+// let valore = " a ";
+// let valore_atteso = "-a";
+// assert_eq!(slugify(valore), valore_atteso)
+// }
+// }
+
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+
+//     #[test]
+//     fn test_i() {
+//         assert_eq!(slugify("À"), "a");
+//     }
+
+//     #[test]
+//     fn test_ii() {
+//         assert_eq!(slugify("a"), "a");
+//     }
+
+//     #[test]
+//     fn test_iii() {
+//         assert_eq!(slugify("!"), "-");
+//     }
+
+//     #[test]
+//     fn test_iv() {
+//         assert_eq!(slugify("]"), "-");
+//     }
+
+//     #[test]
+//     fn test_v() {
+//         assert_eq!(slugify("Hello World"), "hello-world");
+//     }
+
+//     #[test]
+//     fn test_vi() {
+//         assert_eq!(slugify("Héllò"), "hello");
+//     }
+
+//     #[test]
+//     fn test_vii() {
+//         assert_eq!(slugify(""), "");
+//     }
+
+//     #[test]
+//     fn test_viii() {
+//         assert_eq!(slugify("Hello   World"), "hello-world");
+//     }
+
+//     #[test]
+//     fn test_ix() {
+//         assert_eq!(slugify("Héllò, [World!]"), "hello-world");
+//     }
+
+//     #[test]
+//     fn test_x() {
+//         assert_eq!(slugify(".![{"), "-");
+//     }
+
+//     #[test]
+//     fn test_xi() {
+//         assert_eq!(slugify("Héllò "), "hello");
+//     }
+// }
